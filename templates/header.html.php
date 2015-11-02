@@ -1,3 +1,6 @@
+<!-- include helper functions -->
+<?php require_once "$ROOT/include/helpers.inc.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +15,8 @@
     </head>
 
     <body>
-
+        
+        <!-- navigation bar -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -21,16 +25,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Gantabya</a>
+                    <a class="navbar-brand" href="<?php echo $DOMAIN; ?>">Gantabya</a>
                 </div><!-- navbar-header -->
 
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Download</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li <?php checkForActivePage("download"); ?> ><a href="#">Download</a></li>
+                        <li <?php checkForActivePage("about"); ?> ><a href="#">About</a></li>
+                        <li <?php checkForActivePage("contact"); ?> ><a href="#">Contact</a></li>
                     </ul>
                 </div>
-            </div><!-- container-fluid -->
+            </div><!-- container -->
         </nav>

@@ -11,13 +11,17 @@
         <div class="row">
             <?php foreach ($packages as $package) { ?>
 
-            <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="thumbnail">
-                        <img src="http://placehold.it/300x150" class="img img-responsive">
-                        <h3><?php echo $package['PackageName']; ?></h3>
-                        <p>Company: <?php echo $package['CompanyName']; ?></p>
-                        <p><?php echo $package['Description']; ?></p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php echo $package['PackageId']; ?>">Details</button>
+                        <div class="package-img">
+                            <img src="http://placehold.it/300x150" class="img img-responsive">
+                        </div>
+                        <div class="package-info">
+                            <h3><?php echo $package['PackageName']; ?></h3>
+                            <p>Company: <?php echo $package['CompanyName']; ?></p>
+                            <p><?php echo $package['Description']; ?></p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php echo $package['PackageId']; ?>">Details</button>
+                        </div>
                     </div>
 
                     <!-- Modal -->

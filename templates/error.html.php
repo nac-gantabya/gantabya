@@ -1,23 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ERROR</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
     <body>
-        <header>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>An Error has occurred!</h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p><?php echo $error; ?></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <p><?php echo $error; ?></p>
     </body>
 </html>
