@@ -16,3 +16,16 @@ function checkForActivePage($page)
     if ($page == $pageId)
         return " class='active' ";
 }
+
+function html($text)
+{
+    return htmlspecialchars($text, ENT_QUOTES, $encoding);
+}
+
+function redirect($url)
+{
+    ob_start();
+    header('Location: ' . $url);
+    ob_flush();
+    die();
+}

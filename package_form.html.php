@@ -11,7 +11,7 @@
 
     <!-- section body -->
     <div class="container">
-        <form action="" method="post" role="form">
+        <form action="<?php echo $DOMAIN; ?>" method="post" role="form">
             <!-- company -->
             <div id="company" class="row form-group">
                 <div class="col-md-3">
@@ -38,7 +38,7 @@
                     <label for="package_name">Package Name: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" name="package_name" id="package_name" placeholder="Eg: Wild Safari" class="form-control">
+                    <input required type="text" name="package_name" id="package_name" placeholder="Eg: Wild Safari" class="form-control">
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                     <label for="package_place">Package destination: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" name="package_place" id="package_place" placeholder="Eg: Chitwan National Park" class="form-control">
+                    <input required type="text" name="package_place" id="package_place" placeholder="Eg: Chitwan National Park" class="form-control">
                 </div>
             </div>
 
@@ -64,8 +64,8 @@
                 <div class="col-md-5">
                     <?php foreach ($types as $type): ?>
                         <div class="checkbox">
-                            <label style="text-decoration: none; font-weight: normal;">
-                                <input type="checkbox" name="package_types" value="<?php echo $type['Id']; ?>" class="checkbox-inline">
+                            <label>
+                                <input type="checkbox" name="package_types[]" value="<?php echo $type['Id']; ?>" class="checkbox-inline">
                                 <?php echo $type['Name']; ?>
                             </label>
                         </div>
@@ -81,7 +81,7 @@
                     <label for="package_duration">Package duration <small>(in number of days)</small>: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="number" name="package_duration" id="package_duration" min="1" max="25" placeholder="Eg: 5" class="form-control">
+                    <input required type="number" name="package_duration" id="package_duration" min="1" max="25" placeholder="Eg: 5" class="form-control">
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                     <label for="package_price">Package price <small>(in NRs.)</small>: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input class="form-control" type="number" min="0.0" max="1000000.0" name="package_price" id="package_price" placeholder="Eg: 10000">
+                    <input required class="form-control" type="number" min="0.0" max="1000000.0" name="package_price" id="package_price" placeholder="Eg: 10000">
                 </div>
             </div>
 
@@ -105,7 +105,7 @@
                     <label for="package_description">One-line description: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" maxlength="50" name="package_description" id="package_description" placeholder="Maximum 50 characters" class="form-control">
+                    <input required type="text" maxlength="50" name="package_description" id="package_description" placeholder="Maximum 50 characters" class="form-control">
                 </div>
             </div>
 
@@ -140,7 +140,8 @@
                 <div class="col-md-3">
                     &nbsp;
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-5">
+                    <input type="hidden" name="action" value="submit_package">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 </div>

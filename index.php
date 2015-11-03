@@ -4,11 +4,93 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/helpers.inc.php";
 
 //================= IF USER SUBMITTED THE Company FORM, ADD TO DATABASE
-// TODO
+
+if (isset($_POST['action']) && $_POST['action'] == 'submit_company') {
+    try {
+        require "$ROOT/include/db.inc.php";
+
+        $q = 'INSERT INTO Companies (Name, Website) VALUES (:name, :website)';
+        $s = $DB->prepare($q);
+        $s->execute([
+            ':name' => trim($_POST['company_name']),
+            ':website' => trim($_POST['company_website'])
+        ]);
+
+        redirect("$DOMAIN/?add_package");
+    } catch (PDOException $e) {
+        echo "Cannot add company to database: " . $e->getMessage();
+    }
+
+    exit();
+}
+
 //================= IF USER SUBMITTED THE Package FORM, ADD TO DATABASE
-// TODO
+
+if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
+    try {
+        // get data connection
+        require "$ROOT/include/db.inc.php";
+
+        // get form data
+        $cid = trim($_POST['company_id']);
+        $pname = trim($_POST['package_name']);
+        $pplace = trim($_POST['package_place']);
+        $pduration = trim($_POST['package_duration']);
+        $pprice = trim($_POST['package_price']);
+        $pdesc = trim($_POST['package_description']);
+        $pdetail = trim($_POST['package_detail']);
+        $ptypes = trim($_POST['package_types']);
+
+        // insert into Packages table
+        $query = "INSERT INTO Packages (Name, Place, Duration, Price, Description, Detail, CompanyId) VALUES "
+                . "(:name, :place, :duration, :price, :desc, :detail, :cid)";
+        $s = $DB->prepare($query);
+        $s->execute([
+            ':name' => $pname,
+            ':place' => $pplace,
+            ':duration' => $pduration,
+            ':price' => $pprice,
+            ':desc' => $pdesc,
+            ':detail' => $pdetail,
+            ':cid' => $cid
+        ]);
+
+        $pid = $DB->lastInsertId();
+
+        // insert into PackageTypes table
+        $query = 'INSERT INTO PackageTypes (PackageId, TypeId) VALUES '
+                . ' (:pid, :tid)';
+        $s = $DB->prepare($query);
+        foreach ($_POST['package_types'] as $tid) {
+            $s->execute([
+                ':pid' => $pid,
+                ':tid' => $tid
+            ]);
+        }
+
+        // TODO: upload image (if provided)
+
+        redirect($DOMAIN);
+    } catch (PDOException $e) {
+        $error = "Cannot add data to database: " . $e->getMessage();
+        include "$ROOT/templates/error.html.php";
+    }
+
+    exit();
+}
+
+
 //================= if user click on 'Add Company' button, show a company form
-// TODO
+
+if (isset($_GET['add_company'])) {
+    $pageTitle = "Add a Company";
+    $pageId = "add_company";
+    include "$ROOT/templates/header.html.php";
+    include "$ROOT/company_form.html.php";
+    include "$ROOT/templates/footer.html.php";
+    exit();
+}
+
 //================= IF USER CLICK THE 'Add Package' BUTTON, show package form
 
 if (isset($_GET['add_package'])) {
