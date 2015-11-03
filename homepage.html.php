@@ -2,17 +2,21 @@
     <header>
         <div class="page-header">
             <div class="container">
-                <h1>
-                    Packages
-                    <a class="btn btn-default pull-right" href="?add_package">Add Package</a>
-                </h1>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h1>Packages</h1>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-default pull-right" href="?add_package">Add Package</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="row">
-            <?php foreach ($packages as $package) { ?>
+            <?php foreach ($packages as $package): ?>
 
                 <div class="col-md-4">
                     <div class="thumbnail">
@@ -49,7 +53,7 @@
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
