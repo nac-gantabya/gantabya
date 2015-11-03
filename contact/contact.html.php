@@ -11,7 +11,8 @@
 
     <!-- page body -->
     <div class="container">
-        <form action="<?php echo "$DOMAIN/contact"; ?>" method="post" role="form">
+        <form action="<?php echo "$DOMAIN/contact/"; ?>" method="post" role="form">
+            
             <!--Name-->
             <div class="row form-group">
                 <div class="col-md-3">
@@ -55,8 +56,8 @@
 
                 <div class="col-md-5">
                     <input type="hidden" name="action" value="submit_feedback">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <input type="submit" class="btn btn-primary" value='Submit'>
+                    <input type="reset" class="btn btn-default">
                 </div>
 
             </div>
