@@ -13,6 +13,6 @@ $DOMAIN = "http://".$_SERVER['SERVER_NAME']; // This should only be used for hre
  */
 function checkForActivePage($page)
 {
-    if ($pageId == $page)
-        echo " class='active' ";
+    if ($page == $pageId)
+        return " class='active' ";
 }
