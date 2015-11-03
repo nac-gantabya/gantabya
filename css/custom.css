@@ -38,6 +38,9 @@
  #social-gp:hover {
      color: #d34836;
  }
+  #social-gp:hover {
+     color: red;
+ }
  #social-em:hover {
      color: #f39c12;
  }
