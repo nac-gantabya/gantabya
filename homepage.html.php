@@ -2,7 +2,10 @@
     <header>
         <div class="page-header">
             <div class="container">
-                <h1>Packages</h1>
+                <h1>
+                    Packages
+                    <a class="btn btn-default pull-right" href="?add_package">Add Package</a>
+                </h1>
             </div>
         </div>
     </header>
