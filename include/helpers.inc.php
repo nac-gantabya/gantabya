@@ -22,6 +22,11 @@ function html($text)
     return htmlspecialchars($text, ENT_QUOTES, $encoding);
 }
 
+function htmlout($text)
+{
+    echo html($text);
+}
+
 function redirect($url)
 {
     ob_start();

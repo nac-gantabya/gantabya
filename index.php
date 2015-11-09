@@ -11,10 +11,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit_company') {
 
         $q = 'INSERT INTO Companies (Name, Website) VALUES (:name, :website)';
         $s = $DB->prepare($q);
-        $s->execute([
+        $s->execute(array(
             ':name' => trim($_POST['company_name']),
             ':website' => trim($_POST['company_website'])
-        ]);
+        ));
 
         redirect("$DOMAIN/?add_package");
     } catch (PDOException $e) {
@@ -42,33 +42,32 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         $ptypes = trim($_POST['package_types']);
 
         // insert into Packages table
-        $query = "INSERT INTO Packages (Name, Place, Duration, Price, Description, Detail, CompanyId) VALUES "
-                . "(:name, :place, :duration, :price, :desc, :detail, :cid)";
+        $query = "INSERT INTO Packages (Name, Place, Duration, Price, Description, Detail, Image, CompanyId) VALUES "
+                . "(:name, :place, :duration, :price, :desc, :detail, :image, :cid)";
         $s = $DB->prepare($query);
-        $s->execute([
+        $s->execute(array(
             ':name' => $pname,
             ':place' => $pplace,
             ':duration' => $pduration,
             ':price' => $pprice,
             ':desc' => $pdesc,
             ':detail' => $pdetail,
+            ':image' => "http://placehold.it/300x150",
             ':cid' => $cid
-        ]);
+        ));
 
         $pid = $DB->lastInsertId();
 
         // insert into PackageTypes table
-        $query = 'INSERT INTO PackageTypes (PackageId, TypeId) VALUES '
+        $query = 'INSERT INTO PackageType (PackageId, TypeId) VALUES '
                 . ' (:pid, :tid)';
         $s = $DB->prepare($query);
         foreach ($_POST['package_types'] as $tid) {
-            $s->execute([
+            $s->execute(array(
                 ':pid' => $pid,
                 ':tid' => $tid
-            ]);
+            ));
         }
-
-        // TODO: upload image (if provided)
 
         redirect($DOMAIN);
     } catch (PDOException $e) {
@@ -124,7 +123,7 @@ try {
     $queryString = "SELECT" .
             " Packages.Id AS PackageId," .
             " Packages.Name AS PackageName," .
-            " Description, Detail," .
+            " Description, Detail, Image," .
             " Companies.Name AS CompanyName" .
             " FROM Packages" .
             " INNER JOIN Companies" .
@@ -134,7 +133,7 @@ try {
     // get the array of packages
     $packages = $result->fetchAll();
 
-    $pageTitle = "Gantabya";
+    $pageTitle = "Packages | Gantabya";
     $pageId = "home";
     include "$ROOT/templates/header.html.php";
     include "$ROOT/homepage.html.php";
