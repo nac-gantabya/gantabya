@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "gantabya";
-$dbname = "gantabya";
-$dbuser = "gantabya";
-$dbpassword = "gantabya";
+$hostname = "localhost";
+$dbname = "gantabya_db";
+$dbuser = "gantabya_user";
+$dbpassword = "+Ft0=M.;E~xS";
 
 try {
     $DB = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $dbuser, $dbpassword);
