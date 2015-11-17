@@ -69,32 +69,6 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
             ));
         }
 
-        // upload image
-        $file = $_FILES['package_image'];
-        if ($file['size'] > 0) {
-            $imgname = 'package_' . $pid . '_' . str_replace(' ', '_', basename($file['name']));
-            $imgfile = "$ROOT/img/$imgname";
-            $tmpfile = $file['tmp_name'];
-            $imgurl = "$DOMAIN/img/$imgname";
-
-            if ($file['size'] > $_POST['MAX_FILE_SIZE']) {
-                die('Selected file is too large. Go back and select another file!');
-            }
-
-            if (move_uploaded_file($tmpfile, $imgfile)) {
-                // update image field
-                require_once "$ROOT/include/db.inc.php";
-                $q = 'UPDATE Packages SET Image = :image WHERE Id = :id';
-                $s = $DB->prepare($q);
-                $s->execute(array(
-                    ':image' => $imgurl,
-                    ':id' => $pid
-                ));
-            } else {
-                die("Unable to upload image");
-            }
-        }
-
         redirect($DOMAIN);
     } catch (PDOException $e) {
         $error = "Cannot add data to database: " . $e->getMessage();
