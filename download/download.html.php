@@ -10,7 +10,25 @@
     
     <!-- page body -->
     <div class="container">
-        <p>This is the body of this page. It will contain information
-        about our app and the link to download it.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="http://placehold.it/300x300" />
+            </div>
+            <div class="col-md-8">
+                <h4><strong>Download the official app </strong></h4>
+                <div class="jumbotron">
+                    <p>
+                    A random text here.Lorem ipsum dolor sit amet, ei purto tamquam ceteros his, eos in graece posidonium. 
+                    Ex nullam vidisse salutatus sed, ea persius phaedrum tincidunt vel. Option virtute nonumes ne est. 
+                    Id homero expetendis eam, dictas rationibus ut has.
+
+                </p>
+                </div>
+                
+                <a href="#gallery" class="btn btn-primary">Download</a>
+            </div>
+
+
+        
     </div>
 </section>

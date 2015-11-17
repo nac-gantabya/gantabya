@@ -47,6 +47,12 @@ body {
 #social-em:hover {
     color: #f39c12;
 }
+/*Carousel*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
 
 /*set the footer*/
 footer {
@@ -62,4 +68,24 @@ footer {
 
 .team .col-md-4 {
     margin-top: 20px;
+}
+
+/*for  carousel*/
+
+.glyphicon-chevron-left:before {
+  content: "\e079";
+}
+.glyphicon-chevron-right:before {
+  content: "\e080";
+
+  
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
 }

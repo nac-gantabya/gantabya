@@ -12,6 +12,9 @@
         <script src="<?php echo $DOMAIN;?>/js/jquery.js"></script>
         <script src="<?php echo $DOMAIN;?>/js/bootstrap.js"></script>
         <link rel="stylesheet" href="<?php echo $DOMAIN;?>/css/custom.css">
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
 
