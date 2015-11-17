@@ -7,28 +7,24 @@
             </div>
         </div>
     </header>
-    
+
     <!-- page body -->
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <img src="http://placehold.it/300x300" />
+            <div class="col-md-3">
+                <img src="http://placehold.it/300x300" class="img img-responsive"/>
             </div>
-            <div class="col-md-8">
-                <h4><strong>Download the official app </strong></h4>
+            <div class="col-md-9">
                 <div class="jumbotron">
                     <p>
-                    A random text here.Lorem ipsum dolor sit amet, ei purto tamquam ceteros his, eos in graece posidonium. 
-                    Ex nullam vidisse salutatus sed, ea persius phaedrum tincidunt vel. Option virtute nonumes ne est. 
-                    Id homero expetendis eam, dictas rationibus ut has.
+                        Book packages from anywhere in the world! Download our android app!
+                    </p>
 
-                </p>
+                    <p>
+                        <a href="#" class="btn btn-primary">Download</a>
+                    </p>
                 </div>
-                
-                <a href="#gallery" class="btn btn-primary">Download</a>
             </div>
-
-
-        
+        </div>
     </div>
 </section>

@@ -1,2 +1,5 @@
 # NetBeans project directory
 nbproject
+
+# package image files
+img/package_*

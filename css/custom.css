@@ -1,5 +1,5 @@
 body {
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 #packages .thumbnail img {
@@ -77,7 +77,7 @@ footer {
 }
 .glyphicon-chevron-right:before {
   content: "\e080";
-
+}
   
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
