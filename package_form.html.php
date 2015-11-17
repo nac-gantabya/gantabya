@@ -11,7 +11,7 @@
 
     <!-- section body -->
     <div class="container">
-        <form action="<?php echo $DOMAIN; ?>" method="post" role="form">
+        <form action="<?php echo $DOMAIN; ?>" method="post" role="form" enctype="multipart/form-data">
             <!-- company -->
             <div id="company" class="row form-group">
                 <div class="col-md-3">
@@ -129,7 +129,8 @@
                     <label for="package_image">Package cover image: </label>
                 </div>
                 <div class="col-md-5">
-                    <input type="file" name="package_image" id="package_image">
+                    <input type="file" name="package_image" id="package_image" accept="image/*">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
                 </div>
             </div>
 
@@ -138,7 +139,6 @@
             <!-- submit -->
             <div id="submit" class="row">
                 <div class="col-md-3">
-                    &nbsp;
                 </div>
                 <div class="col-md-5">
                     <input type="hidden" name="action" value="submit_package">

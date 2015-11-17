@@ -42,7 +42,7 @@
                                     <h4 class="modal-title"><?php htmlout($package['PackageName']); ?></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p><?php htmlout($package['Detail']); ?></p>
+                                    <p><?php print_r($package); ?></p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
