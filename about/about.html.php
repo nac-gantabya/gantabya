@@ -16,7 +16,7 @@
             <!-- Sushil -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
                 </div>
                 
                 <div>
@@ -28,7 +28,7 @@
             <!-- Pinky -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
                 </div>
                 
                 <div>
@@ -40,7 +40,7 @@
             <!-- Pujan -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
                 </div>
                 
                 <div>
