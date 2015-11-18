@@ -13,7 +13,7 @@
     <div class="container">
         <form action="<?php echo $DOMAIN; ?>" method="post" role="form">
             
-            <!-- package name -->
+            <!-- company name -->
             <div class="row form-group">
                 <div class="col-md-3">
                     <label for="company_name">Company Name: <span class="red">*</span></label>
@@ -25,18 +25,30 @@
 
             <hr>
 
-            <!-- package place -->
+            <!-- company website -->
             <div class="row">
                 <div class="col-md-3">
                     <label for="company_website">Company Website: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="url" name="company_website" id="compan_website" placeholder="Eg: http://himalayan.com.np" class="form-control">
+                    <input required type="url" name="company_website" id="company_website" placeholder="Eg: http://himalayan.com.np" class="form-control">
                 </div>
             </div>
             
             <hr>
 
+            <!-- company_password -->
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="company_website">Company password: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="text" name="company_password" id="company_password" placeholder="Eg: http://himalayan.com.np" class="form-control">
+                </div>
+            </div>
+            
+            <hr>
+            
             <!-- submit -->
             <div id="submit" class="row">
                 <div class="col-md-3">

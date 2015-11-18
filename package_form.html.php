@@ -55,6 +55,18 @@
             </div>
 
             <hr>
+            
+            <!-- short description -->
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="package_description">One-line description: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="text" maxlength="50" name="package_description" id="package_description" placeholder="Maximum 50 characters" class="form-control">
+                </div>
+            </div>
+
+            <hr>
 
             <!-- package type -->
             <div class="row form-group">
@@ -84,33 +96,69 @@
                     <input required type="number" name="package_duration" id="package_duration" min="1" max="25" placeholder="Eg: 5" class="form-control">
                 </div>
             </div>
-
+            
             <hr>
-
-            <!-- package_price -->
+            
+            <!-- package itinerary -->
             <div class="row form-group">
                 <div class="col-md-3">
-                    <label for="package_price">Package price <small>(in NRs.)</small>: <span class="red">*</span></label>
+                    <label for="package_itinerary">Package itinerary: </label>
                 </div>
                 <div class="col-md-5">
-                    <input required class="form-control" type="number" min="0.0" max="1000000.0" name="package_price" id="package_price" placeholder="Eg: 10000">
+                    <textarea class="form-control" name="package_itinerary" id="package_itinerary" placeholder="Day 1: ??? Day 2: ??? ..."></textarea>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <!-- package season -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="package_season">Package season: </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="package_season" id="package_season" placeholder="Best months, comma separated">
                 </div>
             </div>
 
             <hr>
 
-            <!-- short description -->
+            <!-- package_cost -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="package_cost">Package cost <small>(in NRs.)</small>: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required class="form-control" type="number" min="0.0" max="1000000.0" name="package_cost" id="package_cost" placeholder="Eg: 10000">
+                </div>
+            </div>
+
+            <hr>
+            
+            <!-- cost inclusion -->
             <div class="row">
                 <div class="col-md-3">
-                    <label for="package_description">One-line description: <span class="red">*</span></label>
+                    <label for="package_cost_inclusion">cost inclusion: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="50" name="package_description" id="package_description" placeholder="Maximum 50 characters" class="form-control">
+                    <input required type="text" maxlength="50" name="package_cost_inclusion" id="package_cost_inclusion" placeholder="Maximum 50 characters" class="form-control">
                 </div>
             </div>
 
             <hr>
 
+            <!-- package_cost_exclusion -->
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="package_cost_exclusion">Cost exclusion: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="text" maxlength="50" name="package_cost_exclusion" id="package_cost_exclusion" placeholder="Maximum 50 characters" class="form-control">
+                </div>
+            </div>
+
+            <hr>
+            
             <!-- package detail -->
             <div class="row form-group">
                 <div class="col-md-3">
@@ -129,8 +177,22 @@
                     <label for="package_image">Package cover image: </label>
                 </div>
                 <div class="col-md-5">
+                    <input type="url" name="package_image_url" class="form-control" placeholder="Enter a valid image url here">
+                    <br>OR<br>
                     <input type="file" name="package_image" id="package_image" accept="image/*">
                     <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- company password -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="company_password">Company password: </label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="password" name="company_password" id="company_password" class="form-control" placeholder="You set it when adding your company">
                 </div>
             </div>
 

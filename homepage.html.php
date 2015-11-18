@@ -60,36 +60,51 @@
 
     <div class="container">
         <div class="row">
-            <?php foreach ($packages as $package): ?>
+            <?php foreach ($packages as $p): ?>
 
                 <div class="col-md-4">
                     <div class="thumbnail">
-                        <div class="package-img">
-                            <img src="<?php htmlout($package['Image']); ?>" class="img img-responsive">
+                        <div class="p-img">
+                            <img src="<?php htmlout($p['PImage']); ?>" class="img img-responsive">
                         </div>
-                        <div class="package-info">
-                            <h3><?php htmlout($package['PackageName']); ?></h3>
-                            <p>Company: <?php htmlout($package['CompanyName']); ?></p>
-                            <p><?php echo $package['Description']; ?></p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php htmlout($package['PackageId']); ?>">Details</button>
+                        <div class="p-info">
+                            <h3><?php htmlout($p['PName']); ?></h3>
+                            <p><?php htmlout($p['PDescription']); ?></p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>">Details</button>
                         </div>
                     </div>
 
                     <!-- Modal -->
-                    <div id="Modal-<?php htmlout($package['PackageId']); ?>" class="modal fade" role="dialog">
+                    <div id="Modal-<?php htmlout($p['PId']); ?>" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title"><?php htmlout($package['PackageName']); ?></h4>
+                                    <h4 class="modal-title"><?php htmlout($p['PName']); ?> <small>by <a href="<?php htmlout($p['CWebsite']); ?>"><?php htmlout($p['CName']); ?></a></small></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p><?php print_r($package); ?></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    
+                                    <p><strong>Main destination:</strong> <?php htmlout($p['PPlace']); ?></p>
+                                        
+                                    <p><strong>Duration:</strong> <?php htmlout($p['PDuration']); ?> day(s)</p>
+                                        
+                                    <p>
+                                        <strong>Itinerary:</strong><br>
+                                        <?php echo nl2br($p['PItinerary']) ?>
+                                    </p>
+                                    
+                                    <p><strong>Best seasons:</strong> <?php htmlout($p['PSeason']); ?></p>
+                                    
+                                    <p>
+                                        <strong>Cost:</strong> NRs. <?php htmlout($p['PCost']); ?> <br>
+                                        <strong>Cost includes:</strong> <?php htmlout($p['PCostInclusion']); ?> <br>
+                                        <strong>Cost excludes:</strong> <?php htmlout($p['PCostExclusion']); ?>
+                                    </p>
+                                    
+                                    <p><strong>Extra details:</strong><br><?php echo nl2br($p['PDetail']) ?></p>
+                                    
                                 </div>
                             </div>
 

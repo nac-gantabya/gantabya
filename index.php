@@ -9,16 +9,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit_company') {
     try {
         require "$ROOT/include/db.inc.php";
 
-        $q = 'INSERT INTO Companies (Name, Website) VALUES (:name, :website)';
+        $q = 'INSERT INTO Companies (Name, Website, Password) VALUES (:name, :website, :password)';
         $s = $DB->prepare($q);
         $s->execute(array(
             ':name' => trim($_POST['company_name']),
-            ':website' => trim($_POST['company_website'])
+            ':website' => trim($_POST['company_website']),
+            ':password' => $_POST['company_password']
         ));
 
         redirect("$DOMAIN/?add_package");
     } catch (PDOException $e) {
-        echo "Cannot add company to database: " . $e->getMessage();
+        die("Cannot add company to database: " . $e->getMessage());
     }
 
     exit();
@@ -32,27 +33,45 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         require "$ROOT/include/db.inc.php";
 
         // get form data
-        $cid = trim($_POST['company_id']);
+        $cid = $_POST['company_id'];
         $pname = trim($_POST['package_name']);
         $pplace = trim($_POST['package_place']);
-        $pduration = trim($_POST['package_duration']);
-        $pprice = trim($_POST['package_price']);
+        $pduration = $_POST['package_duration'];
+        $pitinerary = trim($_POST['package_itinerary']);
+        $pseason = trim($_POST['package_season']);
+        $pcost = $_POST['package_cost'];
+        $pcostinclusion = trim($_POST['package_cost_inclusion']);
+        $pcostexclusion = trim($_POST['package_cost_exclusion']);
         $pdesc = trim($_POST['package_description']);
         $pdetail = trim($_POST['package_detail']);
-        $ptypes = trim($_POST['package_types']);
+        $pimgurl = trim($_POST['package_image_url']);
+        $cpw = $_POST['company_password'];
+        $ptypes = $_POST['package_types'];
+
+        // get company key (to compare with)
+        $result = $DB->query("SELECT * FROM Companies WHERE Id='$cid'");
+        $row = $result->fetch();
+        if ($cpw != $row['Password']) {
+            die('Incorrect password! You bastard!');
+        }
 
         // insert into Packages table
-        $query = "INSERT INTO Packages (Name, Place, Duration, Price, Description, Detail, Image, CompanyId) VALUES "
-                . "(:name, :place, :duration, :price, :desc, :detail, :image, :cid)";
+        require "$ROOT/include/db.inc.php";
+        $query = "INSERT INTO Packages (Name, Place, Duration, Itinerary, Season, Cost, CostInclusion, CostExclusion, Description, Detail, Image, CompanyId) VALUES "
+                . "(:name, :place, :duration, :itinerary, :season, :cost, :inclusion, :exclusion, :desc, :detail, :image, :cid)";
         $s = $DB->prepare($query);
         $s->execute(array(
             ':name' => $pname,
             ':place' => $pplace,
             ':duration' => $pduration,
-            ':price' => $pprice,
+            ':itinerary' => $pitinerary,
+            ':season' => $pseason,
+            ':cost' => $pcost,
+            ':inclusion' => $pcostinclusion,
+            ':exclusion' => $pcostexclusion,
             ':desc' => $pdesc,
             ':detail' => $pdetail,
-            ':image' => "http://placehold.it/300x150",
+            ':image' => $pimgurl,
             ':cid' => $cid
         ));
 
@@ -71,7 +90,7 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
 
         // upload image
         $file = $_FILES['package_image'];
-        if ($file['size'] > 0) {
+        if ($pimgurl == '' && $file['size'] > 0) {
             $imgname = 'package_' . $pid . '_' . str_replace(' ', '_', basename($file['name']));
             $imgfile = "$ROOT/img/$imgname";
             $tmpfile = $file['tmp_name'];
@@ -93,12 +112,13 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
             } else {
                 die("Unable to upload image");
             }
+        } else if ($pimgurl == '' && $file['size'] == 0) {
+            die("You must select an image for the package! Go back and select an image!");
         }
 
         redirect($DOMAIN);
     } catch (PDOException $e) {
-        $error = "Cannot add data to database: " . $e->getMessage();
-        include "$ROOT/templates/error.html.php";
+        die("Cannot add data to database: " . $e->getMessage());
     }
 
     exit();
@@ -133,8 +153,7 @@ if (isset($_GET['add_package'])) {
         include "$ROOT/package_form.html.php";
         include "$ROOT/templates/footer.html.php";
     } catch (PDOException $e) {
-        $error = "Cannot extract list of companies: " . $e->getMessage();
-        include "$ROOT/templates/error.html.php";
+        die("Cannot extract list of companies: " . $e->getMessage());
     }
 
     exit();
@@ -147,10 +166,20 @@ require_once "$ROOT/include/db.inc.php";
 // get data
 try {
     $queryString = "SELECT" .
-            " Packages.Id AS PackageId," .
-            " Packages.Name AS PackageName," .
-            " Description, Detail, Image," .
-            " Companies.Name AS CompanyName" .
+            " Packages.Id AS PId," .
+            " Packages.Name AS PName," .
+            " Packages.Place AS PPlace," .
+            " Packages.Description AS PDescription," .
+            " Packages.Detail AS PDetail," .
+            " Packages.Duration AS PDuration," .
+            " Packages.Itinerary AS PItinerary," .
+            " Packages.Season AS PSeason," .
+            " Packages.Cost AS PCost," .
+            " Packages.CostInclusion AS PCostInclusion," .
+            " Packages.CostExclusion AS PCostExclusion," .
+            " Packages.Image AS PImage," .
+            " Companies.Name AS CName," .
+            " Companies.Website AS CWebsite" .
             " FROM Packages" .
             " INNER JOIN Companies" .
             " ON Packages.CompanyId = Companies.Id" .
@@ -165,8 +194,7 @@ try {
     include "$ROOT/homepage.html.php";
     include "$ROOT/templates/footer.html.php";
 } catch (PDOException $e) {
-    $error = "Cannot extract data: " . $e->getMessage();
-    include "$ROOT/templates/error.html.php";
+    die("Cannot extract data: " . $e->getMessage());
 }
 
 exit();
