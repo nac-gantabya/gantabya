@@ -20,8 +20,8 @@
                 </div>
                 
                 <div>
-                    <h3>Sushil Shakya</h3>
-                    <h3 style="margin-top:-10px;"><small>Android/Business Developer</small></h3>
+                    <h3><a href="https://facebook.com/0282651E">Sushil Shakya</a></h3>
+                    <h4 style="margin-top:-10px;"><small>Android/Business Developer</small></h4>
                 </div>
             </div>
             
@@ -32,8 +32,8 @@
                 </div>
                 
                 <div>
-                    <h3>Pinky Sitikhu</h3>
-                    <h3 style="margin-top:-10px;"><small>Android Developer/Designer</small></h3>
+                    <h3><a href="https://facebook.com/pinky.sitikhu">Pinky Sitikhu</a></h3>
+                    <h4 style="margin-top:-10px;"><small>Android Developer/Designer</small></h4>
                 </div>
             </div>
             
@@ -44,8 +44,8 @@
                 </div>
                 
                 <div>
-                    <h3>Pujan Thapa</h3>
-                    <h3 style="margin-top:-10px;"><small>Android Developer/Designer</small></h3>
+                    <h3><a href="https://facebook.com/five1553">Pujan Thapa</a></h3>
+                    <h4 style="margin-top:-10px;"><small>Android Developer/Designer</small></h4>
                 </div>
             </div>
             
@@ -61,8 +61,8 @@
                 </div>
                 
                 <div>
-                    <h3>Kritish Pahi</h3>
-                    <h3 style="margin-top:-10px;"><small>Web Designer</small></h3>
+                    <h3><a href="https://facebook.com/kritish.pahi">Kritish Pahi</a></h3>
+                    <h4 style="margin-top:-10px;"><small>Web Designer</small></h4>
                 </div>
             </div>
             
@@ -73,8 +73,8 @@
                 </div>
                 
                 <div>
-                    <h3>Manish Munikar</h3>
-                    <h3 style="margin-top:-10px;"><small>Web Developer</small></h3>
+                    <h3><a href="https://facebook.com/manish.munikar">Manish Munikar</a></h3>
+                    <h4 style="margin-top:-10px;"><small>Web Developer</small></h4>
                 </div>
             </div>
             
