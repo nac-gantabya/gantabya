@@ -49,12 +49,17 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         $pimgurl = trim($_POST['package_image_url']);
         $cpw = $_POST['company_password'];
         $ptypes = $_POST['package_types'];
+        $file = $_FILES['package_image'];
 
         // get company key (to compare with)
         $result = $DB->query("SELECT * FROM Companies WHERE Id='$cid'");
         $row = $result->fetch();
         if ($cpw != $row['Password']) {
             die('Incorrect password! You bastard!');
+        }
+        
+        if (trim($pimgurl) == '' && $file['size'] == 0) {
+            die("You must select an image for the package! Go back and select an image!");
         }
 
         // insert into Packages table
@@ -91,7 +96,6 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         }
 
         // upload image
-        $file = $_FILES['package_image'];
         if ($pimgurl == '' && $file['size'] > 0) {
             $imgname = 'package_' . $pid . '_' . str_replace(' ', '_', basename($file['name']));
             $imgfile = "$ROOT/img/$imgname";

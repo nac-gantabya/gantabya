@@ -138,10 +138,10 @@
             <!-- cost inclusion -->
             <div class="row">
                 <div class="col-md-3">
-                    <label for="package_cost_inclusion">cost inclusion: <span class="red">*</span></label>
+                    <label for="package_cost_inclusion">Cost inclusion: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="50" name="package_cost_inclusion" id="package_cost_inclusion" placeholder="Maximum 50 characters" class="form-control">
+                    <input required type="text" maxlength="255" name="package_cost_inclusion" id="package_cost_inclusion" placeholder="What does the cost include?" class="form-control">
                 </div>
             </div>
 
@@ -153,7 +153,7 @@
                     <label for="package_cost_exclusion">Cost exclusion: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="50" name="package_cost_exclusion" id="package_cost_exclusion" placeholder="Maximum 50 characters" class="form-control">
+                    <input required type="text" maxlength="255" name="package_cost_exclusion" id="package_cost_exclusion" placeholder="What doesn't the cost include?" class="form-control">
                 </div>
             </div>
 
