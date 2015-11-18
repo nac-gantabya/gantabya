@@ -19,7 +19,7 @@ function checkForActivePage($page)
 
 function html($text)
 {
-    return htmlspecialchars($text, ENT_QUOTES, $encoding);
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
 function htmlout($text)
@@ -31,6 +31,6 @@ function redirect($url)
 {
     ob_start();
     header('Location: ' . $url);
-    ob_flush();
+    ob_end_flush();
     die();
 }

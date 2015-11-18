@@ -69,7 +69,7 @@
                             <img src="<?php htmlout($p['PImage']); ?>" class="img img-responsive">
                         </div>
                         <div class="p-info">
-                            <h3><?php htmlout($p['PName']); ?></h3>
+                            <h3><?php htmlout($p['PName']); ?> <span class="pull-right small">NRs. <?php htmlout($p['PCost']); ?></span></h3>
                             <p><?php htmlout($p['PDescription']); ?></p>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>">Details</button>
                         </div>

@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+
 // include helper
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/helpers.inc.php";
 
@@ -81,7 +83,7 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         $query = 'INSERT INTO PackageType (PackageId, TypeId) VALUES '
                 . ' (:pid, :tid)';
         $s = $DB->prepare($query);
-        foreach ($_POST['package_types'] as $tid) {
+        foreach ($ptypes as $tid) {
             $s->execute(array(
                 ':pid' => $pid,
                 ':tid' => $tid

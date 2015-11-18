@@ -11,7 +11,7 @@
 
     <!-- section body -->
     <div class="container">
-        <form action="<?php echo $DOMAIN; ?>" method="post" role="form">
+        <form action="<?php echo $DOMAIN; ?>" method="post" role="form" enctype="multipart/form-data">
             <!-- company -->
             <div id="company" class="row form-group">
                 <div class="col-md-3">
