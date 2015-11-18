@@ -11,7 +11,7 @@
 
     <!-- section body -->
     <div class="container">
-        <form action="<?php echo $DOMAIN; ?>" method="post" role="form" enctype="multipart/form-data">
+        <form action="<?php echo $DOMAIN; ?>" method="post" role="form">
             <!-- company -->
             <div id="company" class="row form-group">
                 <div class="col-md-3">
@@ -201,6 +201,7 @@
             <!-- submit -->
             <div id="submit" class="row">
                 <div class="col-md-3">
+                    &nbsp;
                 </div>
                 <div class="col-md-5">
                     <input type="hidden" name="action" value="submit_package">

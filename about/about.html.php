@@ -3,7 +3,7 @@
     <header>
         <div class="page-header">
             <div class="container">
-                <h1>Our Team</h1>
+                <h1>Meet Our Team</h1>
             </div>
         </div>
     </header>
