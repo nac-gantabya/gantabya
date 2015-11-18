@@ -16,7 +16,7 @@
             <!-- Sushil -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
+                    <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/sushil.jpg"; ?>" width="100">
                 </div>
                 
                 <div>
@@ -28,7 +28,7 @@
             <!-- Pinky -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
+                    <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100" width="100">
                 </div>
                 
                 <div>
@@ -40,7 +40,7 @@
             <!-- Pujan -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100">
+                    <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100" width="100">
                 </div>
                 
                 <div>
@@ -57,7 +57,7 @@
             <!-- Kritish -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/kritish.jpg"; ?>">
+                    <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/kritish.jpg"; ?>" width="100">
                 </div>
                 
                 <div>
@@ -69,7 +69,7 @@
             <!-- Manish -->
             <div class="col-md-4 text-center">
                 <div>
-                <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/manish.jpg"; ?>">
+                    <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/manish.jpg"; ?>" width="100">
                 </div>
                 
                 <div>
