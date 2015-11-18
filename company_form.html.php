@@ -40,10 +40,10 @@
             <!-- company_password -->
             <div class="row">
                 <div class="col-md-3">
-                    <label for="company_website">Company password: <span class="red">*</span></label>
+                    <label for="company_password">Company password: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" name="company_password" id="company_password" placeholder="Eg: http://himalayan.com.np" class="form-control">
+                    <input required type="text" name="company_password" id="company_password" placeholder="Keep it strong and safe" class="form-control">
                 </div>
             </div>
             
