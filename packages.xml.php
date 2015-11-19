@@ -28,7 +28,7 @@
             <!-- associated package types -->
             <PackageTypes>
                 <?php
-                $q = 'SELECT PackageType.TypeId AS TId, Types.Name AS Tame' .
+                $q = 'SELECT PackageType.TypeId AS TId, Types.Name AS TName' .
                         ' FROM Types INNER JOIN PackageType ON Types.Id=PackageType.TypeId' .
                         ' WHERE PackageType.PackageId=' . $p['PId'];
 
