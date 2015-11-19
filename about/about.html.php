@@ -40,7 +40,7 @@
             <!-- Pujan -->
             <div class="col-md-4 text-center">
                 <div>
-                    <img class="img-circle img-responsive img-center" src="http://placehold.it/100x100" width="100">
+                    <img class="img-circle img-responsive img-center" src="<?php echo "$DOMAIN/img/pujan.jpg"; ?>" width="100">
                 </div>
                 
                 <div>
