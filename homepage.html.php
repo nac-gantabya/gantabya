@@ -27,19 +27,19 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img class="img img-responsive" src="https://dukeshouse.files.wordpress.com/2011/10/nepal_10.jpg" height="200">
+              <img class="img img-responsive" src="http://www.nepalgatewaytrekking.com/pagegallery/bigthumb/himchuli-peak-climbing22.jpg" height="400">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="http://www.nepaleasytrek.com/page_gallery/jungle-safari-tour37.jpg">
+              <img class="img-responsive" src="http://2.bp.blogspot.com/-eXf8y85d3kc/VU2_cEBwOQI/AAAAAAAAHfE/cYJ0czNqoQI/s400/4de11a7acd5d1b36cba9fa2c3dddbb4c-maya-devi-temple.jpg" height="400">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="http://dragonlightphotography.com/Tour2DescriptionAndSchedule/2009-Fall/2009Fall-Nepal_clip_image001.jpg">
+              <img class="img-responsive" src="http://www.greatwallnepal.com/images/activities_rafting.jpg" height="400">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="https://cdn.hotelplanner.com/Common/Images/HotelImage/134203.jpg">
+              <img class="img-responsive" src="http://www.silverrobin.co.uk/wp-content/uploads/2015/09/1200cropped40-400x150.jpg" height="400">
             </div>
           </div>
 
