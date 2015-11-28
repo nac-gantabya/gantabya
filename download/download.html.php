@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="http://placehold.it/300x300" />
+                <img src="http://placehold.it/300x300" class="img img-responsive"/>
             </div>
             <div class="col-md-8">
                 <h4><strong>Download the official app </strong></h4>
