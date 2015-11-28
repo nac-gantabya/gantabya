@@ -11,11 +11,13 @@
             Duration="<?php echo $p['PDuration']; ?>"
             Season="<?php echo $p['PSeason']; ?>"
             Cost="<?php echo $p['PCost']; ?>"
-            CostInclusion="<?php echo $p['PCostInclusion']; ?>"
-            CostExclusion="<?php echo $p['PCostExclusion']; ?>"
             Image="<?php echo $p['PImage']; ?>">
             
             <Itinerary><?php echo $p['PItinerary']; ?></Itinerary>
+            
+            <CostInclusion><?php echo $p['PCostInclusion']; ?></CostInclusion>
+            
+            <CostExclusion><?php echo $p['PCostExclusion']; ?></CostExclusion>
 
             <Detail><?php echo $p['PDetail']; ?></Detail>
             

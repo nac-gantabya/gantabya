@@ -141,7 +141,7 @@
                     <label for="package_cost_inclusion">Cost inclusion: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="255" name="package_cost_inclusion" id="package_cost_inclusion" placeholder="What does the cost include?" class="form-control">
+                    <textarea required name="package_cost_inclusion" id="package_cost_inclusion" placeholder="What does the cost include?" class="form-control"></textarea>
                 </div>
             </div>
 
@@ -153,7 +153,7 @@
                     <label for="package_cost_exclusion">Cost exclusion: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="255" name="package_cost_exclusion" id="package_cost_exclusion" placeholder="What doesn't the cost include?" class="form-control">
+                    <textarea required name="package_cost_exclusion" id="package_cost_exclusion" placeholder="What doesn't the cost include?" class="form-control"></textarea>
                 </div>
             </div>
 

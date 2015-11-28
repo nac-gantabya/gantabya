@@ -95,11 +95,9 @@
 
                                     <p><strong>Best seasons:</strong> <?php htmlout($p['PSeason']); ?></p>
 
-                                    <p>
-                                        <strong>Cost:</strong> NRs. <?php htmlout($p['PCost']); ?> <br>
-                                        <strong>Cost includes:</strong> <?php htmlout($p['PCostInclusion']); ?> <br>
-                                        <strong>Cost excludes:</strong> <?php htmlout($p['PCostExclusion']); ?>
-                                    </p>
+                                    <p><strong>Cost:</strong> NRs. <?php htmlout($p['PCost']); ?></p>
+                                    <p><strong>Cost includes:</strong><br> <?php echo nl2br($p['PCostInclusion']); ?></p>
+                                    <p><strong>Cost excludes:</strong><br> <?php echo nl2br($p['PCostExclusion']); ?></p>
 
                                     <p><strong>Extra details:</strong><br><?php echo nl2br($p['PDetail']) ?></p>
 
