@@ -22,7 +22,8 @@ try {
             ' Packages.Image AS PImage,' .
             ' Packages.CompanyId AS CId,' .
             ' Companies.Name AS CName,' .
-            ' Companies.Website AS CWebsite' .
+            ' Companies.Website AS CWebsite,' .
+            ' Companies.Phone AS CPhone' .
             ' FROM Packages' .
             ' INNER JOIN Companies ON Packages.CompanyId=Companies.Id';
     
@@ -31,7 +32,7 @@ try {
     
     // include the xml template
     header('Content-Type: text/xml');
-    include "$ROOT/packages.xml.php";
+    include "packages.xml.php";
 } catch (PDOException $e) {
     echo "SERVER ERROR: " . $e->getMessage();
 }

@@ -46,19 +46,11 @@
             </div><!-- col-md-12 -->
         </div><!-- row -->
     </div><!-- carousel container -->
-    
+
     <header>
         <div class="page-header">
             <div class="container">
-                <hr>
-                <div class="row">
-                    <div class="col-md-10">
-                        <h1>Packages</h1>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="btn btn-default pull-right" href="?add_package">Add Package</a>
-                    </div>
-                </div>
+                <h1>Packages <a class="btn btn-default pull-right" href="?add_package">Add Package</a> </h1>
             </div>
         </div>
     </header>

@@ -36,6 +36,18 @@
             </div>
             
             <hr>
+            
+            <!-- company phone -->
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="company_phone">Company Phone: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="text" name="company_phone" id="company_phone" placeholder="Eg: +97714234567" class="form-control">
+                </div>
+            </div>
+            
+            <hr>
 
             <!-- company_password -->
             <div class="row">

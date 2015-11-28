@@ -11,11 +11,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit_company') {
     try {
         require "$ROOT/include/db.inc.php";
 
-        $q = 'INSERT INTO Companies (Name, Website, Password) VALUES (:name, :website, :password)';
+        $q = 'INSERT INTO Companies (Name, Website, Phone, Password) VALUES (:name, :website, :phone, :password)';
         $s = $DB->prepare($q);
         $s->execute(array(
             ':name' => trim($_POST['company_name']),
             ':website' => trim($_POST['company_website']),
+            ':phone' => trim($_POST['company_phone']),
             ':password' => $_POST['company_password']
         ));
 
@@ -49,7 +50,6 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         $pimgurl = trim($_POST['package_image_url']);
         $cpw = $_POST['company_password'];
         $ptypes = $_POST['package_types'];
-        $file = $_FILES['package_image'];
 
         // get company key (to compare with)
         $result = $DB->query("SELECT * FROM Companies WHERE Id='$cid'");
@@ -58,8 +58,11 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
             die('Incorrect password! You bastard!');
         }
         
-        if (trim($pimgurl) == '' && $file['size'] == 0) {
-            die("You must select an image for the package! Go back and select an image!");
+        // check for image validity
+        if ($pimgurl == '') {
+            die("You must select a valid image for the package! Go back and select an image!");
+        } else if (!isValidImageUrl($pimgurl)) {
+            die("The image URL you provided is not valid. Go back and try again with a valid image URL.");
         }
 
         // insert into Packages table
@@ -93,33 +96,6 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
                 ':pid' => $pid,
                 ':tid' => $tid
             ));
-        }
-
-        // upload image
-        if ($pimgurl == '' && $file['size'] > 0) {
-            $imgname = 'package_' . $pid . '_' . str_replace(' ', '_', basename($file['name']));
-            $imgfile = "$ROOT/img/$imgname";
-            $tmpfile = $file['tmp_name'];
-            $imgurl = "$DOMAIN/img/$imgname";
-
-            if ($file['size'] > $_POST['MAX_FILE_SIZE']) {
-                die('Selected file is too large. Go back and select another file!');
-            }
-
-            if (move_uploaded_file($tmpfile, $imgfile)) {
-                // update image field
-                require_once "$ROOT/include/db.inc.php";
-                $q = 'UPDATE Packages SET Image = :image WHERE Id = :id';
-                $s = $DB->prepare($q);
-                $s->execute(array(
-                    ':image' => $imgurl,
-                    ':id' => $pid
-                ));
-            } else {
-                die("Unable to upload image");
-            }
-        } else if ($pimgurl == '' && $file['size'] == 0) {
-            die("You must select an image for the package! Go back and select an image!");
         }
 
         redirect($DOMAIN);
@@ -194,7 +170,7 @@ try {
     // get the array of packages
     $packages = $result->fetchAll();
 
-    $pageTitle = "Packages | Gantabya";
+    $pageTitle = "Home";
     $pageId = "home";
     include "$ROOT/templates/header.html.php";
     include "$ROOT/homepage.html.php";

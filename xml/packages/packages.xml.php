@@ -23,7 +23,8 @@
             <Company
                 Id="<?php htmlout($p['CId']); ?>"
                 Name="<?php htmlout($p['CName']); ?>"
-                Website="<?php htmlout($p['CWebsite']); ?>"/>
+                Website="<?php htmlout($p['CWebsite']); ?>"
+                Phone="<?php htmlout($p['CPhone']); ?>"/>
 
             <!-- associated package types -->
             <PackageTypes>

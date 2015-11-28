@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title><?php echo $pageTitle; ?></title>
+        <title>Gantabya | <?php echo $pageTitle; ?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,9 +34,10 @@
 
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li <?php if ($pageId=="download") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN/";?>download">Download</a></li>
-                        <li <?php if ($pageId=="about") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN/";?>about">About</a></li>
-                        <li <?php if ($pageId=="contact") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN/";?>contact">Contact</a></li>
+                        <li <?php if ($pageId=="bus") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN";?>/bus">Bus Tickets</a></li>
+                        <li <?php if ($pageId=="download") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN";?>/download">Download</a></li>
+                        <li <?php if ($pageId=="about") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN";?>/about">About</a></li>
+                        <li <?php if ($pageId=="contact") echo "class='active'"; ?>><a href="<?php echo "$DOMAIN";?>/contact">Contact</a></li>
                     </ul>
                 </div>
             </div><!-- container -->

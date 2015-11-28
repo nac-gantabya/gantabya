@@ -174,13 +174,10 @@
             <!-- package image -->
             <div class="row form-group">
                 <div class="col-md-3">
-                    <label for="package_image">Package cover image: </label>
+                    <label for="package_image">Package cover image: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="url" name="package_image_url" class="form-control" placeholder="Enter a valid image url here">
-                    <br>OR<br>
-                    <input type="file" name="package_image" id="package_image" accept="image/*">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
+                    <input required type="url" name="package_image_url" class="form-control" placeholder="Enter a valid image url here">
                 </div>
             </div>
 
