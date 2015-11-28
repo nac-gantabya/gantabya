@@ -1,8 +1,21 @@
 <section id="packages">
+<br>
     
-    <!--Carousel-->
+    
     <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    	
+
+    	<div class="row">
+
+
+    		<div class="col-md-3">
+    		<!--Plce for add -->
+    		</div>
+
+    		<div class="col-md-6">
+    			<!--Carousel-->
+    		<div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,19 +27,19 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="http://placehold.it/400x200" alt="Chania">
+              <img class="img img-responsive" src="https://dukeshouse.files.wordpress.com/2011/10/nepal_10.jpg" height="200">
             </div>
 
             <div class="item">
-              <img src="http://placehold.it/400x200" alt="Chania">
+              <img class="img-responsive" src="http://www.nepaleasytrek.com/page_gallery/jungle-safari-tour37.jpg">
             </div>
 
             <div class="item">
-              <img src="http://placehold.it/400x200" alt="Flower">
+              <img class="img-responsive" src="http://dragonlightphotography.com/Tour2DescriptionAndSchedule/2009-Fall/2009Fall-Nepal_clip_image001.jpg">
             </div>
 
             <div class="item">
-              <img src="http://placehold.it/400x200" alt="Flower">
+              <img class="img-responsive" src="https://cdn.hotelplanner.com/Common/Images/HotelImage/134203.jpg">
             </div>
           </div>
 
@@ -40,12 +53,26 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+
+
+    		</div>
+
+    	<div class="col-md-3">
+    		<!--Plce for add -->
+    	</div>
+
+
+
+    	</div>
+        
     </div>
+
     
     
     <header>
         <div class="page-header">
             <div class="container">
+             <hr>
                 <div class="row">
                     <div class="col-md-10">
                         <h1>Packages</h1>
