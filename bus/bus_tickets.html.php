@@ -3,7 +3,7 @@
     <header>
         <div class="page-header">
             <div class="container">
-                <h1>Bus Tickets <a class="btn btn-default pull-right" href="?add_package">Add Ticket</a> </h1>
+                <h1>Bus Tickets <a class="btn btn-default pull-right" href="?add_ticket">Add Ticket</a> </h1>
             </div>
         </div>
     </header>
