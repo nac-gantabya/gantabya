@@ -1,5 +1,6 @@
 <section id="bus">
 
+    <!-- page header -->
     <header>
         <div class="page-header">
             <div class="container">
@@ -8,7 +9,7 @@
         </div>
     </header>
 
-
+    <!-- page body -->
     <div class="container">
         <div class="row">
             <?php foreach ($tickets as $t): ?>
@@ -38,10 +39,10 @@
                                 <div class="modal-body">
                                     <p><strong>Extra details:</strong><br><?php echo nl2br($t['BDetail']) ?></p>
                                 </div>
-                            </div>
+                            </div><!-- modal-content -->
 
                         </div>
-                    </div>
+                    </div><!-- modal -->
                 </div>
 
             <?php endforeach; ?>

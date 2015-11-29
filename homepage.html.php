@@ -1,11 +1,16 @@
 <section id="packages">
 
-    <!-- carousel -->
+    <!-- carousel and ads -->
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <!--Carousel-->
+            <div class="col-md-3">
+                <!-- place for ad -->
+            </div>
+
+            <!-- carousel -->
+            <div class="col-md-6">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -17,19 +22,19 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img class="img img-responsive" src="https://dukeshouse.files.wordpress.com/2011/10/nepal_10.jpg" height="200">
+                            <img class="img img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/himchuli.jpg"; ?>">
                         </div>
 
                         <div class="item">
-                            <img class="img-responsive" src="http://www.nepaleasytrek.com/page_gallery/jungle-safari-tour37.jpg">
+                            <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/mountain.jpg"; ?>">
                         </div>
 
                         <div class="item">
-                            <img class="img-responsive" src="http://dragonlightphotography.com/Tour2DescriptionAndSchedule/2009-Fall/2009Fall-Nepal_clip_image001.jpg">
+                            <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/river.jpg"; ?>">
                         </div>
 
                         <div class="item">
-                            <img class="img-responsive" src="https://cdn.hotelplanner.com/Common/Images/HotelImage/134203.jpg">
+                            <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/terai.jpg"; ?>">
                         </div>
                     </div>
 
@@ -43,10 +48,15 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            </div><!-- col-md-12 -->
+            </div><!-- carousel -->
+            
+            <div class="col-md-3">
+                <!-- place for ad -->
+            </div>
         </div><!-- row -->
-    </div><!-- carousel container -->
+    </div><!-- container -->
 
+    <!-- page header -->
     <header>
         <div class="page-header">
             <div class="container">
@@ -55,7 +65,7 @@
         </div>
     </header>
 
-
+    <!-- page body -->
     <div class="container">
         <div class="row">
             <?php foreach ($packages as $p): ?>
@@ -75,7 +85,7 @@
                     <!-- Modal -->
                     <div id="Modal-<?php htmlout($p['PId']); ?>" class="modal fade" role="dialog">
                         <div class="modal-dialog">
-
+                            
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -83,26 +93,16 @@
                                     <h4 class="modal-title"><?php htmlout($p['PName']); ?> <small>by <a href="<?php htmlout($p['CWebsite']); ?>"><?php htmlout($p['CName']); ?></a></small></h4>
                                 </div>
                                 <div class="modal-body">
-
                                     <p><strong>Main destination:</strong> <?php htmlout($p['PPlace']); ?></p>
-
                                     <p><strong>Duration:</strong> <?php htmlout($p['PDuration']); ?> day(s)</p>
-
-                                    <p>
-                                        <strong>Itinerary:</strong><br>
-                                        <?php echo nl2br($p['PItinerary']) ?>
-                                    </p>
-
+                                    <p><strong>Itinerary:</strong><br> <?php echo nl2br($p['PItinerary']) ?></p>
                                     <p><strong>Best seasons:</strong> <?php htmlout($p['PSeason']); ?></p>
-
                                     <p><strong>Cost:</strong> NRs. <?php htmlout($p['PCost']); ?></p>
                                     <p><strong>Cost includes:</strong><br> <?php echo nl2br($p['PCostInclusion']); ?></p>
                                     <p><strong>Cost excludes:</strong><br> <?php echo nl2br($p['PCostExclusion']); ?></p>
-
                                     <p><strong>Extra details:</strong><br><?php echo nl2br($p['PDetail']) ?></p>
-
                                 </div>
-                            </div>
+                            </div><!-- modal-content -->
 
                         </div>
                     </div>
