@@ -27,19 +27,19 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img class="img img-responsive" src="http://www.nepalgatewaytrekking.com/pagegallery/bigthumb/himchuli-peak-climbing22.jpg" height="400">
+              <img class="img img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/himchuli.jpg"; ?>">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="http://2.bp.blogspot.com/-eXf8y85d3kc/VU2_cEBwOQI/AAAAAAAAHfE/cYJ0czNqoQI/s400/4de11a7acd5d1b36cba9fa2c3dddbb4c-maya-devi-temple.jpg" height="400">
+              <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/mountain.jpg"; ?>">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="http://www.greatwallnepal.com/images/activities_rafting.jpg" height="400">
+              <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/river.jpg"; ?>">
             </div>
 
             <div class="item">
-              <img class="img-responsive" src="http://www.silverrobin.co.uk/wp-content/uploads/2015/09/1200cropped40-400x150.jpg" height="400">
+              <img class="img-responsive" src="<?php echo "$DOMAIN/img/img_carsouel/terai.jpg"; ?>">
             </div>
           </div>
 
