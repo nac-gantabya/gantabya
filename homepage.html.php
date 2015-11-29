@@ -71,16 +71,17 @@
             <?php foreach ($packages as $p): ?>
 
                 <div class="col-md-4">
+                    <a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>">
                     <div class="thumbnail">
                         <div class="p-img">
                             <img src="<?php htmlout($p['PImage']); ?>" class="img img-responsive">
                         </div>
                         <div class="p-info">
-                            <h3><?php htmlout($p['PName']); ?> <span class="pull-right small">NRs. <?php htmlout($p['PCost']); ?></span></h3>
-                            <p><?php htmlout($p['PDescription']); ?></p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>">Details</button>
+                            <h3><a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>"><?php htmlout($p['PName']); ?></a></h3>
+                            <p>NRs. <?php htmlout($p['PCost']); ?></p>
                         </div>
                     </div>
+                    </a>
 
                     <!-- Modal -->
                     <div id="Modal-<?php htmlout($p['PId']); ?>" class="modal fade" role="dialog">
@@ -93,6 +94,7 @@
                                     <h4 class="modal-title"><?php htmlout($p['PName']); ?> <small>by <a href="<?php htmlout($p['CWebsite']); ?>"><?php htmlout($p['CName']); ?></a></small></h4>
                                 </div>
                                 <div class="modal-body">
+                                    <p><strong>Overview:</strong><br> <?php echo nl2br($p['POverview']); ?></p>
                                     <p><strong>Main destination:</strong> <?php htmlout($p['PPlace']); ?></p>
                                     <p><strong>Duration:</strong> <?php htmlout($p['PDuration']); ?> day(s)</p>
                                     <p><strong>Itinerary:</strong><br> <?php echo nl2br($p['PItinerary']) ?></p>

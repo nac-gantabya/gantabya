@@ -15,16 +15,17 @@
             <?php foreach ($tickets as $t): ?>
 
                 <div class="col-md-3">
-                    <div class="thumbnail">
-                        <div class="p-img">
-                            <img src="<?php echo $t['BImage']; ?>" class="img img-responsive">
+                    <a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($t['BId']); ?>">
+                        <div class="thumbnail">
+                            <div class="p-img">
+                                <img src="<?php echo $t['BImage']; ?>" class="img img-responsive">
+                            </div>
+                            <div class="p-info">
+                                <h4><a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($t['BId']); ?>"><?php htmlout($t['BFrom']); ?> - <?php htmlout($t['BTo']); ?></a></h4>
+                                <p>Rs. <?php htmlout($t['BCost']); ?></p>
+                            </div>
                         </div>
-                        <div class="p-info">
-                            <h4><?php htmlout($t['BFrom']); ?> - <?php htmlout($t['BTo']); ?></h4>
-                            <p>Rs. <?php htmlout($t['BCost']); ?></p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#Modal-<?php htmlout($t['BId']); ?>">Details</button>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Modal -->
                     <div id="Modal-<?php htmlout($t['BId']); ?>" class="modal fade" role="dialog">
@@ -37,6 +38,13 @@
                                     <h4 class="modal-title"><small>by <a href="<?php htmlout($t['AWebsite']); ?>"><?php htmlout($t['AName']); ?></a></small></h4>
                                 </div>
                                 <div class="modal-body">
+                                    <p><strong>From</strong> <?php htmlout($t['BFrom']); ?> <strong>To</strong> <?php htmlout($t['BTo']); ?></p>
+                                    <p><strong>Departs at</strong> <?php echo $t['BDepartureTime']; ?> <strong>and reaches destination at</strong> <?php echo $t['BArrivalTime']; ?></p>
+                                    <p><strong>Ticket for each seat costs</strong> NRs. <?php echo $t['BCost']; ?></p>
+                                    <!-- display seat chart if it exists -->
+                                    <?php if ($t['BChart'] != ''): ?>
+                                        <p><strong>Seat chart:</strong><br><img src="<?php echo $t['BChart']; ?>" class="img img-responsive"></p>
+                                    <?php endif; ?>
                                     <p><strong>Extra details:</strong><br><?php echo nl2br($t['BDetail']) ?></p>
                                 </div>
                             </div><!-- modal-content -->

@@ -7,7 +7,6 @@
             Id="<?php echo $p['PId'] ; ?>"
             Name="<?php echo $p['PName']; ?>"
             Place="<?php echo($p['PPlace']); ?>"
-            Description="<?php echo $p['PDescription']; ?>"
             Duration="<?php echo $p['PDuration']; ?>"
             Season="<?php echo $p['PSeason']; ?>"
             Cost="<?php echo $p['PCost']; ?>"
@@ -18,6 +17,8 @@
             <CostInclusion><?php echo $p['PCostInclusion']; ?></CostInclusion>
             
             <CostExclusion><?php echo $p['PCostExclusion']; ?></CostExclusion>
+            
+            <Overview><?php echo $p['POverview']; ?></Overview>
 
             <Detail><?php echo $p['PDetail']; ?></Detail>
             

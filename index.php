@@ -45,7 +45,7 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         $pcost = $_POST['package_cost'];
         $pcostinclusion = trim($_POST['package_cost_inclusion']);
         $pcostexclusion = trim($_POST['package_cost_exclusion']);
-        $pdesc = trim($_POST['package_description']);
+        $poverview = $_POST['package_overview'];
         $pdetail = trim($_POST['package_detail']);
         $pimgurl = trim($_POST['package_image_url']);
         $cpw = $_POST['company_password'];
@@ -57,18 +57,16 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
         if ($cpw != $row['Password']) {
             die('Incorrect password! You bastard!');
         }
-        
+
         // check for image validity
         if ($pimgurl == '') {
             die("You must select a valid image for the package! Go back and select an image!");
-        } else if (!isValidImageUrl($pimgurl)) {
-            die("The image URL you provided is not valid. Go back and try again with a valid image URL.");
         }
 
         // insert into Packages table
         require "$ROOT/include/db.inc.php";
-        $query = "INSERT INTO Packages (Name, Place, Duration, Itinerary, Season, Cost, CostInclusion, CostExclusion, Description, Detail, Image, CompanyId) VALUES "
-                . "(:name, :place, :duration, :itinerary, :season, :cost, :inclusion, :exclusion, :desc, :detail, :image, :cid)";
+        $query = "INSERT INTO Packages (Name, Place, Duration, Itinerary, Season, Cost, CostInclusion, CostExclusion, Overview, Detail, Image, CompanyId) VALUES "
+                . "(:name, :place, :duration, :itinerary, :season, :cost, :inclusion, :exclusion, :overview, :detail, :image, :cid)";
         $s = $DB->prepare($query);
         $s->execute(array(
             ':name' => $pname,
@@ -79,7 +77,7 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
             ':cost' => $pcost,
             ':inclusion' => $pcostinclusion,
             ':exclusion' => $pcostexclusion,
-            ':desc' => $pdesc,
+            ':overview' => $poverview,
             ':detail' => $pdetail,
             ':image' => $pimgurl,
             ':cid' => $cid
@@ -98,7 +96,7 @@ if (isset($_POST['action']) && $_POST['action'] == "submit_package") {
             ));
         }
 
-        redirect($DOMAIN);
+        redirect(".");
     } catch (PDOException $e) {
         die("Cannot add data to database: " . $e->getMessage());
     }
@@ -151,7 +149,7 @@ try {
             " Packages.Id AS PId," .
             " Packages.Name AS PName," .
             " Packages.Place AS PPlace," .
-            " Packages.Description AS PDescription," .
+            " Packages.Overview AS POverview," .
             " Packages.Detail AS PDetail," .
             " Packages.Duration AS PDuration," .
             " Packages.Itinerary AS PItinerary," .

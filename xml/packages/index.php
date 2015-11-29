@@ -11,7 +11,7 @@ try {
             ' Packages.Id AS PId,' .
             ' Packages.Name AS PName,' .
             ' Packages.Place AS PPlace,' .
-            ' Packages.Description AS PDescription,' .
+            ' Packages.Overview AS POverview,' .
             ' Packages.Duration AS PDuration,' .
             ' Packages.Itinerary AS PItinerary,' .
             ' Packages.Season AS PSeason,' .

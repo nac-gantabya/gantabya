@@ -56,13 +56,13 @@
 
             <hr>
             
-            <!-- short description -->
+            <!-- short overview -->
             <div class="row">
                 <div class="col-md-3">
-                    <label for="package_description">One-line description: <span class="red">*</span></label>
+                    <label for="package_overview">Overview: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input required type="text" maxlength="50" name="package_description" id="package_description" placeholder="Maximum 50 characters" class="form-control">
+                    <textarea required name="package_overview" id="package_overview" placeholder="Brief overview of the package" class="form-control"></textarea>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <p style="margin-top: 10px;">Copyright &copy; <?php echo date('Y'); ?></p>
+                <p style="margin-top: 10px;">Gantabya &copy; <?php echo date('Y'); ?></p>
             </div>
 
             <div class="col-md-6">
