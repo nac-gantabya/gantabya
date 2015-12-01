@@ -41,10 +41,10 @@
             <!-- agency_website -->
             <div class="row form-group">
                 <div class="col-md-3">
-                    <label for="AWebsite">Agency website: <span class="red">*</span></label>
+                    <label for="AWebsite">Agency website:</label>
                 </div>
                 <div class="col-md-5">
-                    <input type="url" required name="AWebsite" id="AWebsite" class="form-control" placeholder="Eg: http://prithvi.com" maxlength="50">
+                    <input type="url" name="AWebsite" id="AWebsite" class="form-control" placeholder="Eg: http://prithvi.com" maxlength="50">
                 </div>
             </div>
             

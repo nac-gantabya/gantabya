@@ -96,7 +96,7 @@
             <!-- ticket_image -->
             <div class="row form-group">
                 <div class="col-md-3">
-                    <label for="BImage">Ticket image: <span class="red">*</span></label>
+                    <label for="BImage">Bus image: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
                     <input type="url" name="BImage" id="BImage" placeholder="Enter a valid image URL" required class="form-control" maxlength="255">
