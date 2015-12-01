@@ -61,6 +61,18 @@
                                     <?php if ($t['BDetail'] != ''): ?>
                                         <p><strong>Extra details:</strong><br><?php echo nl2br($t['BDetail']) ?></p>
                                     <?php endif; ?>
+                                        
+                                    <!-- weekdays -->
+                                    <p>
+                                        <strong>Available weekdays:</strong><br>
+                                        <?php
+                                         require "$ROOT/include/db.inc.php";
+                                         $result = $DB->query('SELECT * FROM BusTicketWeekdays WHERE TicketId='.$t['BId']);
+                                         while ($row = $result->fetch()) {
+                                             echo $row['Weekday'].'<br>';
+                                         }
+                                        ?>
+                                    </p>
                                 </div>
                             </div><!-- modal-content -->
 
