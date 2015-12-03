@@ -19,6 +19,7 @@
             <Agency
                 Id="<?php htmlout($t['AId']); ?>"
                 Name="<?php htmlout($t['AName']); ?>"
+                RegistrationNumber="<?php htmlout($t['ANumber']); ?>"
                 Website="<?php htmlout($t['AWebsite']); ?>"
                 Phone="<?php htmlout($t['APhone']); ?>"/>
 

@@ -22,6 +22,18 @@
                     <input required type="text" name="company_name" id="company_name" placeholder="Eg: Himalayan Travels" class="form-control">
                 </div>
             </div>
+            
+            <hr>
+            
+            <!-- registration number -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="company_reg_number">Company Registration Number: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input required type="text" maxlength="20" name="company_reg_number" id="company_reg_number" placeholder="Eg: 1016" class="form-control">
+                </div>
+            </div>
 
             <hr>
 

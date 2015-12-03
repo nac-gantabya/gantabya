@@ -11,10 +11,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit_company') {
     try {
         require "$ROOT/include/db.inc.php";
 
-        $q = 'INSERT INTO Companies (Name, Website, Phone, Password) VALUES (:name, :website, :phone, :password)';
+        $q = 'INSERT INTO Companies (Name, RegistrationNumber, Website, Phone, Password) VALUES (:name, :number, :website, :phone, :password)';
         $s = $DB->prepare($q);
         $s->execute(array(
             ':name' => trim($_POST['company_name']),
+            ':number' => trim($_POST['company_reg_number']),
             ':website' => trim($_POST['company_website']),
             ':phone' => trim($_POST['company_phone']),
             ':password' => $_POST['company_password']

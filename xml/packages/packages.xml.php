@@ -26,6 +26,7 @@
             <Company
                 Id="<?php htmlout($p['CId']); ?>"
                 Name="<?php htmlout($p['CName']); ?>"
+                RegistrationNumber="<?php htmlout($p['CNumber']); ?>"
                 Website="<?php htmlout($p['CWebsite']); ?>"
                 Phone="<?php htmlout($p['CPhone']); ?>"/>
 

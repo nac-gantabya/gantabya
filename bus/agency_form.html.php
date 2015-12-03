@@ -26,6 +26,18 @@
             
             <hr>
             
+            <!-- agency registration number -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label for="ANumber">Agency registration number: <span class="red">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" required name="ANumber" id="ANumber" class="form-control" placeholder="Eg: 1016" maxlength="20">
+                </div>
+            </div>
+            
+            <hr>
+            
             <!-- agency_phone -->
             <div class="row form-group">
                 <div class="col-md-3">

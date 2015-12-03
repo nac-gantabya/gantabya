@@ -19,6 +19,7 @@ try {
             ' BusTickets.SeatChart AS BChart,' .
             ' BusTickets.Detail AS BDetail,' .
             ' BusAgencies.Name AS AName,' .
+            ' BusAgencies.RegistrationNumber AS ANumber,' .
             ' BusAgencies.Phone AS APhone,' .
             ' BusAgencies.Website AS AWebsite' .
             ' FROM BusTickets' .

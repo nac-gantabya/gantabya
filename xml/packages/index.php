@@ -22,6 +22,7 @@ try {
             ' Packages.Image AS PImage,' .
             ' Packages.CompanyId AS CId,' .
             ' Companies.Name AS CName,' .
+            ' Companies.RegistrationNumber AS CNumber,' .
             ' Companies.Website AS CWebsite,' .
             ' Companies.Phone AS CPhone' .
             ' FROM Packages' .

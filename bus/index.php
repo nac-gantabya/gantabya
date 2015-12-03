@@ -21,15 +21,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit_agency') {
     try {
         // get form data
         $AName = trim($_POST['AName']);
+        $ANumber = trim($_POST['ANumber']);
         $APhone = trim($_POST['APhone']);
         $AWebsite = trim($_POST['AWebsite']);
         $APassword = trim($_POST['APassword']);
         
         // insert into BusAgencies
         require "$ROOT/include/db.inc.php";
-        $s = $DB->prepare("INSERT INTO BusAgencies VALUES ('', :name, :phone, :website, :password)");
+        $s = $DB->prepare("INSERT INTO BusAgencies VALUES ('', :name, :number, :phone, :website, :password)");
         $s->execute(array(
             ':name' => $AName,
+            ':number' => $ANumber,
             ':phone' => $APhone,
             ':website' => $AWebsite,
             ':password' => $APassword
