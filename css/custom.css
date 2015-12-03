@@ -1,5 +1,5 @@
 body {
-    padding-top: 90px;
+    padding-top: 60px;
 }
 
 #packages .thumbnail img {
@@ -65,6 +65,7 @@ footer {
     background-color: #111;
     width: 100%;
     color: #ccc;
+	margin-top: 1.5cm;
 }
 
 .img-center {
