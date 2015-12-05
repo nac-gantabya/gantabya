@@ -22,7 +22,7 @@
                             </div>
                             <div class="p-info">
                                 <h4><a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($t['BId']); ?>"><?php htmlout($t['BFrom']); ?> - <?php htmlout($t['BTo']); ?></a></h4>
-                                <p>Rs. <?php htmlout($t['BCost']); ?></p>
+                                <p>Rs. <?php htmlout($t['BCost']); ?> <a href="<?php echo $DOMAIN; ?>/book.php?bid=<?php htmlout($t['BId']); ?>" class="btn btn-primary btn-sm pull-right">BOOK NOW!</a></p>
                             </div>
                         </div>
                     </a>
@@ -73,6 +73,9 @@
                                          }
                                         ?>
                                     </p>
+                                </div><!-- modal-body -->
+                                <div class="modal-footer">
+                                    <a href="<?php echo $DOMAIN; ?>/book.php?bid=<?php htmlout($t['BId']); ?>" class="btn btn-primary btn-sm pull-right">BOOK NOW!</a>
                                 </div>
                             </div><!-- modal-content -->
 

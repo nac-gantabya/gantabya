@@ -78,7 +78,7 @@
                         </div>
                         <div class="p-info">
                             <h3><a href="#" data-toggle="modal" data-target="#Modal-<?php htmlout($p['PId']); ?>"><?php htmlout($p['PName']); ?></a></h3>
-                            <p>NRs. <?php htmlout($p['PCost']); ?></p>
+                            <p>NRs. <?php htmlout($p['PCost']); ?> <a href="book.php?pid=<?php htmlout($p['PId']); ?>" class="btn btn-primary btn-sm pull-right">BOOK NOW!</a></p>
                         </div>
                     </div>
                     </a>
@@ -103,6 +103,9 @@
                                     <p><strong>Cost includes:</strong><br> <?php echo nl2br($p['PCostInclusion']); ?></p>
                                     <p><strong>Cost excludes:</strong><br> <?php echo nl2br($p['PCostExclusion']); ?></p>
                                     <p><strong>Extra details:</strong><br><?php echo nl2br($p['PDetail']) ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="book.php?pid=<?php htmlout($p['PId']); ?>" class="btn btn-primary btn-sm pull-right">BOOK NOW!</a>
                                 </div>
                             </div><!-- modal-content -->
 
