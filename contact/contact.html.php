@@ -19,7 +19,7 @@
                     <label for="name">Full Name: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" name="name" id="name" required class="form-control">
+                    <input type="text" name="name" id="name" required class="form-control" placeholder="First Last">
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                     <label for="email">Email: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <input type="email" name="email" id="email" required class="form-control">
+                    <input type="email" name="email" id="email" required class="form-control" placeholder="example@domain.com">
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                     <label for="message">Your Message: <span class="red">*</span></label>
                 </div>
                 <div class="col-md-5">
-                    <textarea name="message" id="message" required class="form-control"></textarea>
+                    <textarea name="message" id="message" required class="form-control" rows="10" placeholder="Try to be concise..."></textarea>
                 </div>
             </div>
 
@@ -62,17 +62,5 @@
 
             </div>
         </form>
-    <p></p>
-    <p></p>
-    <p></p>
-        
-
-    </div>
-
-
-
-
-
-
-
+    </div><!-- container -->
 </section>
