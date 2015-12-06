@@ -11,7 +11,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit-book-form') {
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $passport = trim($_POST['passport']);
-    
+
     // show thank you page
     $pageTitle = "Thank you for booking";
     include "$ROOT/templates/header.html.php";
@@ -21,8 +21,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit-book-form') {
 }
 
 // include the form
-$pageTitle = 'Book a package';
-$pageId = 'book-package';
+if (isset($_GET['bid']))
+    $pageTitle = 'Book a Ticket';
+else
+    $pageTitle = 'Book a Package';
 include "$ROOT/templates/header.html.php";
 include 'book_form.html.php';
 include "$ROOT/templates/footer.html.php";

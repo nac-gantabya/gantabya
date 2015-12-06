@@ -4,7 +4,7 @@
     <header>
         <div class="page-header">
             <div class="container">
-                <h1>Book a Package</h1>
+                <h1><?php echo $pageTitle; ?></h1>
                 <small>Required fields are marked with <span class="red">*</span>.</small>
             </div>
         </div>
