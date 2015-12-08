@@ -1,6 +1,6 @@
 <?php
 
-echo '{"GantabyaData":';
+echo '{"GantabyaData":[';
 
 foreach ($data as $p) {
     $id = $p['id'];
@@ -10,4 +10,4 @@ foreach ($data as $p) {
     echo '{"id":"' . $id . '", "name":"' . $name . '", "place":"' . $place . '"},';
 }
 
-echo '}';
+echo ']}';
